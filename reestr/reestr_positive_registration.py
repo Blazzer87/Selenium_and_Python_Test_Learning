@@ -11,7 +11,7 @@ driver = webdriver.Chrome(service=service)
 user_input = 0
 while user_input == 0:
 
-    driver.get('https://hello.aoreestr.ru/')
+    driver.get('https://reestr-hello-linux.qpdev.ru/')
     time.sleep(4)
     # нажать кнопку регистрации
     registration = driver.find_element(By.CSS_SELECTOR, '[class=qpd-rstr--register-0-2-54]')
