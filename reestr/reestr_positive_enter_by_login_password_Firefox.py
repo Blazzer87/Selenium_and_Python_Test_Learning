@@ -6,7 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 # service = Service(executable_path=ChromeDriverManager().install())        # закоментил для проверки
-driver = webdriver.Chrome()                 # аргумент в скобках - service=service
+driver = webdriver.Firefox()                 # аргумент в скобках - service=service
 
 driver.get('https://reestr-hello-linux.qpdev.ru/')
 phone = driver.find_element(By.NAME, 'phone')
