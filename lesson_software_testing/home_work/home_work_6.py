@@ -5,7 +5,6 @@
 '''
 
 
-import time
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -27,7 +26,7 @@ submit = driver.find_element(By.CSS_SELECTOR, '[name=login]')
 submit.click()
 
 ul_element = driver.find_element(By.CSS_SELECTOR, '#box-apps-menu.list-vertical')       # найдём весь элемент меню на странице
-ul_child_count = ul_element.get_property("childElementCount")           # определим количество дочерних элементов и поместим в переменную
+ul_child_count = ul_element.get_property("childElementCount")           # через свойства объекта определим количество дочерних элементов и поместим в переменную
 
 x = 0
 y = 1
