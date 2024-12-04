@@ -32,6 +32,7 @@ countries = driver.find_element(By.XPATH, '//*[@id="app-"]//span[text()="Countri
 countries.click()
 country_list = driver.find_elements(By.XPATH, '//*[@id="content"]//form//a[text()]')
 country_text_list = []
+
 for n in range(len(country_list)):
     country_text_list.append(country_list[n].text)
 country_text_list_sorted = sorted(country_text_list)
@@ -40,25 +41,23 @@ if country_text_list_sorted == country_text_list:
 else:
     print("Перечень стран не отсортирован")
 
-user1 = driver.find_element(By.XPATH, '//*[@class=row]')
-print(user1.get_attribute('innerText'))
-
-"""
-user2 = []
-for i in range(len(user1)):
-    user2.append(user1[i].get_attribute('innerText'))
-print(user2)
+geo = driver.find_element(By.XPATH, '//*[@class="row"][./td[6][text()=13]]/td[5]/a')
+geo.click()
 
 geozona_list = driver.find_elements(By.XPATH, '//*[@id="content"]/form/table/tbody/tr/td[6]')
 geozona_list_text = []
+
 for m in range(len(geozona_list)):
     if int(geozona_list[m].text) >= 1:
         geozona_list_text.append(int(geozona_list[m].text))
-print(geozona_list_text)
-"""
+        x = 0
+        print(geozona_list_text[x])
+        geo = driver.find_element(By.XPATH, '//*[@class="row"][./td[6][text()='f'{geozona_list_text[x]}]/td[5]/a')
+        geo.click()
+        x += 1
 
 
-time.sleep(2)
+time.sleep(10)
 
 driver.quit()
 
