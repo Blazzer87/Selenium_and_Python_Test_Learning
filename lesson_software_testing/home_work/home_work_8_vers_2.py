@@ -5,12 +5,9 @@
 б) для тех стран, у которых количество зон отлично от нуля -- открывает страницу
 этой страны и там проверяет, что геозоны расположены в алфавитном порядке
 '''
-import time
 
 from selenium import webdriver
-from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.devtools.v85.dom import get_attributes
 
 options = webdriver.ChromeOptions()                 # создаём опции хрома
 options.add_argument('start-maximized')             # передаём фулскрин в опции хрома
