@@ -39,10 +39,10 @@ if country_text_list_sorted == country_text_list:
 else:
     print("Перечень стран не отсортирован")
 
-geo = driver.find_element(By.XPATH, '//*[@class="row"][./td[6][text()=13]]/td[5]/a')
-geo.click()
+"""geo = driver.find_element(By.XPATH, '//*[@class="row"][./td[6][text()=13]]/td[5]/a')        # рабочий XPATH селектор, обращающийся к нужному элементу, но с постоянным значением
+geo.click()"""
 
-geozona_list = driver.find_elements(By.XPATH, '//*[@id="content"]/form/table/tbody/tr/td[6]')       # рабочий XPATH селектор, обращающийся к нужному элементу, но с постоянным значением
+geozona_list = driver.find_elements(By.XPATH, '//*[@id="content"]/form/table/tbody/tr/td[6]')
 geozona_list_text = []
 
 for m in range(len(geozona_list)):
@@ -50,7 +50,7 @@ for m in range(len(geozona_list)):
         geozona_list_text.append(int(geozona_list[m].text))
         x = 0
         print(geozona_list_text[x])
-        geo = driver.find_element(By.XPATH, '//*[@class="row"][./td[6][text()='f'{geozona_list_text[x]}]/td[5]/a')      # тот же самый рабочий XPATH селектор, но в который необходимо поместить элемент списка по индексу
+        geo = driver.find_element(By.XPATH, '//*[@class="row"][./td[6][text()=13]]/td[5]/a')      # тот же самый рабочий XPATH селектор, но в который необходимо поместить элемент списка по индексу
         geo.click()
         x += 1
 
