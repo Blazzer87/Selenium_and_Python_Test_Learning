@@ -9,7 +9,7 @@
 4) и ещё раз выход.
 В качестве страны выбирайте United States, штат произвольный. При этом формат индекса -- пять цифр.
 '''
-import random
+
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -21,20 +21,30 @@ driver = webdriver.Chrome(options)                  # запускаем хро�
 driver.get('http://localhost/litecart/en/')
 driver.implicitly_wait(2)
 
+reg_data = [
+    {'tax_id':'12345'},
+    {'company': 'QPD'},
+    {'firstname':'Sergey'},
+    {'lastname':'Laba'},
+    {'address1':'Pobedi 60'},
+    {'address2':'kv. 90'},
+    {'postcode':'55555'}
+    ]
+
 registration_button = driver.find_element(By.XPATH, '//*[@id="box-account-login"]//a[text()="New customers click here"]')
 registration_button.click()
 
 tax_id = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="tax_id"]')
 tax_id.send_keys('12345')
 
+company = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="company"]')
+company.send_keys('QPD')
+
 first_name = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="firstname"]')
 first_name.send_keys('Sergey')
 
 last_name = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="lastname"]')
 last_name.send_keys('Laba')
-
-company = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="company"]')
-company.send_keys('QPD')
 
 address1 = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="address1"]')
 address1.send_keys('Pobedi 60')
