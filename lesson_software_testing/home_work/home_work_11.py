@@ -25,7 +25,7 @@ registration_button = driver.find_element(By.XPATH, '//*[@id="box-account-login"
 registration_button.click()
 
 tax_id = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="tax_id"]')
-tax_id.send_keys(12345)
+tax_id.send_keys('12345')
 
 first_name = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="firstname"]')
 first_name.send_keys('Sergey')
@@ -37,10 +37,10 @@ company = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name=
 company.send_keys('QPD')
 
 address1 = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="address1"]')
-address1.send_keys('Voronezh')
+address1.send_keys('Pobedi 60')
 
 address2 = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="address2"]')
-address2.send_keys('Holzynova 38')
+address2.send_keys('kv. 90')
 
 postcode = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="postcode"]')
 postcode.send_keys('55555')
