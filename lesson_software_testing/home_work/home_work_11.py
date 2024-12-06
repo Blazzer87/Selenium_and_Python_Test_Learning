@@ -1,7 +1,9 @@
 '''
-Сделайте сценарий для регистрации нового пользователя в учебном приложении litecart (не в админке, а в клиентской части магазина).
+Сделайте сценарий для регистрации нового пользователя в учебном приложении litecart
+(не в админке, а в клиентской части магазина).
 Сценарий должен состоять из следующих частей:
-1) регистрация новой учётной записи с достаточно уникальным адресом электронной почты (чтобы не конфликтовало с ранее созданными пользователями, в том числе при предыдущих запусках того же самого сценария),
+1) регистрация новой учётной записи с достаточно уникальным адресом электронной почты
+(чтобы не конфликтовало с ранее созданными пользователями, в том числе при предыдущих запусках того же самого сценария),
 2) выход (logout), потому что после успешной регистрации автоматически происходит вход,
 3) повторный вход в только что созданную учётную запись,
 4) и ещё раз выход.
@@ -21,6 +23,46 @@ driver.implicitly_wait(2)
 
 registration_button = driver.find_element(By.XPATH, '//*[@id="box-account-login"]//a[text()="New customers click here"]')
 registration_button.click()
+
+tax_id = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="tax_id"]')
+tax_id.send_keys(12345)
+
+first_name = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="firstname"]')
+first_name.send_keys('Sergey')
+
+last_name = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="lastname"]')
+last_name.send_keys('Laba')
+
+company = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="company"]')
+company.send_keys('QPD')
+
+address1 = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="address1"]')
+address1.send_keys('Voronezh')
+
+address2 = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="address2"]')
+address2.send_keys('Holzynova 38')
+
+postcode = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="postcode"]')
+postcode.send_keys('55555')
+
+city = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="city"]')
+city.send_keys('Voronezh')
+
+email = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="email"]')
+email.send_keys('laba@laba.ru')
+
+password = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="password"]')
+password.send_keys('!QAZ1qaz')
+
+confirmed_password = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="confirmed_password"]')
+confirmed_password.send_keys('!QAZ1qaz')
+
+phone = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="phone"]')
+phone.send_keys('79507586687')
+
+
+
+
 
 
 

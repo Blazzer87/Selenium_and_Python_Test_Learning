@@ -39,24 +39,35 @@ if country_text_list_sorted == country_text_list:
 else:
     print("Перечень стран не отсортирован")
 
-"""geo = driver.find_element(By.XPATH, '//*[@class="row"][./td[6][text()=13]]/td[5]/a')        # рабочий XPATH селектор, обращающийся к нужному элементу, но с постоянным значением
-geo.click()"""
-
 geozona_list = driver.find_elements(By.XPATH, '//*[@id="content"]/form/table/tbody/tr/td[6]')
-geozona_list_text = []
+geozona_list_int = []
+zones_list_str = []
 
 for m in range(len(geozona_list)):
     if int(geozona_list[m].text) >= 1:
-        geozona_list_text.append(int(geozona_list[m].text))
-        x = 0
-        print(geozona_list_text[x])
-        geo = driver.find_element(By.XPATH, '//*[@class="row"][./td[6][text()=13]]/td[5]/a')      # тот же самый рабочий XPATH селектор, но в который необходимо поместить элемент списка по индексу
-        geo.click()
-        x += 1
+        geozona_list_int.append(int(geozona_list[m].text))
 
-
-time.sleep(10)
+x = 0
+while x < len(geozona_list_int):
+    geo = driver.find_element(By.XPATH, f'//*[@class="row"][./td[6][text()={geozona_list_int[x]}]]/td[5]/a')
+    geo.click()
+    time.sleep(4)
+    x += 1
+    zones_list = driver.find_elements(By.XPATH, '//*[@id="table-zones"]/tbody/tr/td[3][.//text()]')
+    for k in zones_list:
+        zones_list_str.append(k.get_attribute('textContent'))
+        zones_list_str_sorted = sorted(zones_list_str)
+    country = driver.find_element(By.XPATH, '//*[@id="content"]/form/table[1]/tbody/tr[4]/td/input')
+    country_name = country.get_attribute('value')
+    if zones_list_str_sorted == zones_list_str:
+        print(f'Список регионов страны {country_name} отсортирован в алфавитном порядке')
+        print(f'Список без сортировки {zones_list_str}')
+        print(f'Список с сортировкой {zones_list_str_sorted}')
+    else:
+        print(f'Список регионов страны {country_name} не отсортирован')
+        print(f'Список без сортировки {zones_list_str}')
+        print(f'Список с сортировкой {zones_list_str_sorted}')
+    print('\n')
+    driver.back()
 
 driver.quit()
-
-
