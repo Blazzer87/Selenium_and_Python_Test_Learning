@@ -88,7 +88,7 @@ country_list = driver.find_element(By.CSS_SELECTOR, '[type=search]')
 country_list.send_keys(f'{reg_data.get('country')}')
 country_list.send_keys(Keys.ENTER)
 
-zone_code = driver.find_element(By.XPATH, '//*//*[@id="create-account"]//select[@name="zone_code"]')
+zone_code = driver.find_element(By.XPATH, '//*[@id="create-account"]//select[@name="zone_code"]')
 zone_code.click()
 zone = driver.find_element(By.XPATH, '//*[@id="create-account"]//select/option[text()="Nevada"]')
 zone.click()
