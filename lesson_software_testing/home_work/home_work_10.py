@@ -33,9 +33,6 @@ x = 0
 
 while x < len(browser):
     if x == 0:
-
-
-
         options = webdriver.ChromeOptions()
         options.add_argument('start-maximized')
         driver = webdriver.Chrome(options)
