@@ -69,18 +69,6 @@ postcode.send_keys(f'{reg_data.get('postcode')}')
 city = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="city"]')
 city.send_keys(f'{reg_data.get('city')}')
 
-email = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="email"]')
-email.send_keys(f'{reg_data.get('email')}')
-
-phone = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="phone"]')
-phone.send_keys(f'{reg_data.get('phone')}')
-
-password = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="password"]')
-password.send_keys(f'{reg_data.get('password')}')
-
-confirmed_password = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="confirmed_password"]')
-confirmed_password.send_keys(f'{reg_data.get('confirmed_password')}')
-
 country_selector = driver.find_element(By.CSS_SELECTOR, '[role=presentation]')
 country_selector.click()
 
@@ -93,6 +81,18 @@ zone_code.click()
 zone = driver.find_element(By.XPATH, '//*[@id="create-account"]//select/option[text()="Nevada"]')
 zone.click()
 zone_code.click()
+
+email = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="email"]')
+email.send_keys(f'{reg_data.get('email')}')
+
+phone = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="phone"]')
+phone.send_keys(f'{reg_data.get('phone')}')
+
+password = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="password"]')
+password.send_keys(f'{reg_data.get('password')}')
+
+confirmed_password = driver.find_element(By.XPATH, '//*[@id="create-account"]//input[@name="confirmed_password"]')
+confirmed_password.send_keys(f'{reg_data.get('confirmed_password')}')
 
 create_account = driver.find_element(By.XPATH, '//*[@id="create-account"]//button[@type="submit"]')
 create_account.click()
