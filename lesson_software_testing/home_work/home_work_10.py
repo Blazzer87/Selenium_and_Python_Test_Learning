@@ -196,7 +196,7 @@ while x < len(browser):
     elif x == 1:
         print("Завершены тесты на Firefox")
     elif x == 2:
-        print("Завершены тесты на Interner Explorer")
+        print("Завершены тесты на Internet Explorer")
     print('\n')
     x += 1
     driver.quit()
