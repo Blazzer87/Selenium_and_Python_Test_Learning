@@ -44,7 +44,7 @@ while x < len(browser):
         driver = webdriver.Ie()
 
     driver.get('http://localhost/litecart/en/')
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(4)
 
     # нашли первую утку в блоке Кампейнс
     first_campaigns_utka = driver.find_element(By.XPATH, '//div[@id="box-campaigns"]//li[@class="product column shadow hover-light"][1]')
@@ -153,8 +153,8 @@ while x < len(browser):
     font_campaign_price_product_page = driver.find_element(By.XPATH, '//div[@id="box-product"]//strong[@class="campaign-price"]').value_of_css_property("font-size")
     font_regular_price_product_page = driver.find_element(By.XPATH, '//div[@id="box-product"]//s[@class="regular-price"]').value_of_css_property('font-size')
     try:
-        font_campaign_price_product_page_list = re.findall(r'\d+', font_campaign_price_main_page)  # паттерн \d+ возвращает целые числа
-        font_regular_price_product_page_list = re.findall(r'\d+\.?\d', font_regular_price_main_page)  # паттерн \d+\.?\d возвращает дробные значения с разделителем точкой
+        font_campaign_price_product_page_list = re.findall(r'\d+', font_campaign_price_product_page)  # паттерн \d+ возвращает целые числа
+        font_regular_price_product_page_list = re.findall(r'\d+\.?\d', font_regular_price_product_page)  # паттерн \d+\.?\d возвращает дробные значения с разделителем точкой
         assert font_campaign_price_product_page_list[0] > font_regular_price_product_page_list[0]
         print('Проверка №10 пройдена успешно - акционная цена КРУПНЕЕ, чем обычная на странице товара')
     except AssertionError:

@@ -60,7 +60,6 @@ quantity_input = driver.find_element(By.XPATH, '//input[@name="quantity"]')
 quantity_input.clear()
 quantity_input.send_keys('25')
 
-
 upload_images = driver.find_element(By.XPATH, '//input[@type="file"][@name="new_images[]"]')
 relative_path_image = 'utkapank.jpg'
 absolute_path_image = os.path.abspath(relative_path_image)
