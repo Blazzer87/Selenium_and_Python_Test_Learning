@@ -17,7 +17,7 @@ print('Текст первоначального элемента', number1.text
 page2 = driver.find_element(By.XPATH, '//*[@id="demo1"]/div[2]/div/ul/li[3]/a')     # находим кнопку пагинации
 page2.click()                                                                               # нажимаем пагинацию, перелистываем записи
 
-wait = WebDriverWait(driver, 2) # seconds       # требует импорта библиотек, создаём 2-ух секундное ожидание
+wait = WebDriverWait(driver, 2)                 # требует импорта библиотек, создаём 2-ух секундное ожидание
 wait.until(EC.staleness_of(number1))                    # ожидает исчезновения, убеждаемся что элемент исчез
 
 number1 = driver.find_element(By.XPATH, '//*[@id="demo1"]/div[1]/ul/li[1]')         # запрашиваем заново элемент и его текст - видим новый получившийся элемент
