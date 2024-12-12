@@ -19,6 +19,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
+from lesson_software_testing.home_work.home_work_3_vers_2_with_def import *
+
 options = webdriver.ChromeOptions()                 # создаём опции хрома
 options.add_argument('start-maximized')             # передаём фулскрин в опции хрома
 # options.add_argument('incognito')                   # передаём инкогнито в опции хрома
@@ -27,14 +29,11 @@ driver = webdriver.Chrome(options)                  # запускаем хро�
 driver.get('http://localhost/litecart/admin/?app=countries&doc=countries')
 driver.implicitly_wait(2)
 
-username = driver.find_element(By.CSS_SELECTOR, '[name=username]')
-username.send_keys('admin')
-password = driver.find_element(By.CSS_SELECTOR, '[name=password]')
-password.send_keys('admin')
-rememberme = driver.find_element(By.CSS_SELECTOR, '[name=remember_me]')
-rememberme.click()
-submit = driver.find_element(By.CSS_SELECTOR, '[name=login]')
-submit.click()
+find_and_send_keys('admin', '//input[@name="username"]')
+find_and_send_keys('admin', '//input[@name="password"]')
+find_and_click('//input[@type="checkbox"]')
+find_and_click('//button[@type="submit"][@name="login"]')
+
 
 edit_country_list = driver.find_elements(By.XPATH, '//a[@title="Edit"]')        # на странице Кантри получаем весь список кнопок редактировать для кажой из стран
 random_edit_country = random.choice(edit_country_list)        # выбираем случайную страну из списка
@@ -55,8 +54,9 @@ elements_locator_dict = {
 main_window = driver.current_window_handle          # определяем текущую страницу как главную
 
 for i in range(len(link_button_list)):         # запускаем цикл, равный количеству табов с внешней ссылкой
-    link = driver.find_element(By.XPATH, f'{list(elements_locator_dict.values())[i]}')      # таб определяется по локатору из словаря, обращаемся к значению словаря переводя его в список, где индекс равен номеру цикла.
-    link.click()
+    # link = driver.find_element(By.XPATH, f'{list(elements_locator_dict.values())[i]}')      # таб определяется по локатору из словаря, обращаемся к значению словаря переводя его в список, где индекс равен номеру цикла.
+    # link.click()
+    find_and_click(f'{list(elements_locator_dict.values())[i]}')
     wait = WebDriverWait(driver, 2)
     wait.until(expected_conditions.number_of_windows_to_be(2))           # ждём пока открытых страниц станет 2
     all_window_list = driver.window_handles                    # все открытые страницы определяем в список
