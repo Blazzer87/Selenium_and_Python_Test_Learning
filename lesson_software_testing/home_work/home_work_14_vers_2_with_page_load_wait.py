@@ -50,30 +50,32 @@ elements_locator_dict = {
     'postcode_format':'//td[./input[@name="postcode_format"]]/a[@target="_blank"]',
     'currency_code':'//td[./input[@name="currency_code"]]/a[@target="_blank"]',
     'phone_code':'//td[./input[@name="phone_code"]]/a[@target="_blank"]'
-}
+}               # создаём словарь с локаторами по каждой из кнопок, где ключ - название, а кнопки - значение XPATH локатор
 
-main_window = driver.current_window_handle
+main_window = driver.current_window_handle      # определяем текущую страницу как главную
 
-for i in range(len(link_button_list)):
-    link = driver.find_element(By.XPATH, f'{list(elements_locator_dict.values())[i]}')
+for i in range(len(link_button_list)):      # запускаем цикл, равный количеству табов с внешней ссылкой
+    link = driver.find_element(By.XPATH, f'{list(elements_locator_dict.values())[i]}')      # таб определяется по локатору из словаря, обращаемся к значению словаря переводя его в список, где индекс равен номеру цикла.
     link.click()
     wait = WebDriverWait(driver, 2)
-    wait.until(expected_conditions.number_of_windows_to_be(2))
-    all_window_list = driver.window_handles
-    for window_for_open_link in all_window_list:
-        if window_for_open_link != main_window:
-            driver.switch_to.window(window_for_open_link)
-            all_window_list.remove(window_for_open_link)
+    wait.until(expected_conditions.number_of_windows_to_be(2))       # ждём пока открытых страниц станет 2
+    all_window_list = driver.window_handles             # все открытые страницы определяем в список
+    for window_for_open_link in all_window_list:            # перебираем список с идентификаторами страниц
+        if window_for_open_link != main_window:                 # определяем новую открытую страницу
+            driver.switch_to.window(window_for_open_link)           # переключаемся в новую страницу
+            all_window_list.remove(window_for_open_link)            # удаляем из списка страниц страницу с внешней ссылкой, список вновь состоит из с траница = главной
             break
     try:
+        # для адаптации теста под 4-ую внешнюю ссылку, чтобы избежать загрузки более 1,5 минут,
+        # включаем ограничение по времени загрузки страницы в 10 секунд
         driver.set_page_load_timeout(10)
-        wait.until(expected_conditions.visibility_of_element_located((By.XPATH, '//h1')))
+        wait.until(expected_conditions.visibility_of_element_located((By.XPATH, '//h1')))       # ждём пока на открывшейся странице обнаружится заголовок страницы
     except TimeoutException:
         continue
     finally:
-        h1 = driver.find_element(By.XPATH, '//h1')
+        h1 = driver.find_element(By.XPATH, '//h1')          # находим текстовый заголовок страницы
         print(f"Успешно открыта страница {h1.text}.")
-        driver.close()
-        driver.switch_to.window(main_window)
+        driver.close()              # закрываем новое окно
+        driver.switch_to.window(main_window)             # переключаемся на главный экран
 print("Проверка завершена.")
 driver.quit()

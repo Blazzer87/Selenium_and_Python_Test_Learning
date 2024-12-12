@@ -21,6 +21,7 @@ from selenium.webdriver.support import expected_conditions
 
 options = webdriver.ChromeOptions()                 # создаём опции хрома
 options.add_argument('start-maximized')             # передаём фулскрин в опции хрома
+options.page_load_strategy = 'eager'                # меняем стратегию загрузки страницы на более раннюю - АДАПТАЦИЯ ТЕСТА ПОД ДЛИТЕЛЬНУЮ ЗАГРУЗКУ СТРАНИЦЫ 4
 # options.add_argument('incognito')                   # передаём инкогнито в опции хрома
 driver = webdriver.Chrome(options)                  # запускаем хром с опциями переданными ранее
 
@@ -57,7 +58,7 @@ main_window = driver.current_window_handle          # определяем те�
 for i in range(len(link_button_list)):         # запускаем цикл, равный количеству табов с внешней ссылкой
     link = driver.find_element(By.XPATH, f'{list(elements_locator_dict.values())[i]}')      # таб определяется по локатору из словаря, обращаемся к значению словаря переводя его в список, где индекс равен номеру цикла.
     link.click()
-    wait = WebDriverWait(driver, 2)
+    wait = WebDriverWait(driver, 8)
     wait.until(expected_conditions.number_of_windows_to_be(2))           # ждём пока открытых страниц станет 2
     all_window_list = driver.window_handles                    # все открытые страницы определяем в список
     for window_for_open_link in all_window_list:              # перебираем список с идентификаторами страниц
