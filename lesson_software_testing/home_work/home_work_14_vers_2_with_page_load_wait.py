@@ -22,7 +22,6 @@ from selenium.webdriver.support import expected_conditions
 options = webdriver.ChromeOptions()                 # создаём опции хрома
 options.add_argument('start-maximized')             # передаём фулскрин в опции хрома
 options.add_argument('incognito')                   # передаём инкогнито в опции хрома
-options.add_argument('incognito')                   # передаём инкогнито в опции хрома
 driver = webdriver.Chrome(options)                  # запускаем хром с опциями переданными ранее
 
 driver.get('http://localhost/litecart/admin/?app=countries&doc=countries')
