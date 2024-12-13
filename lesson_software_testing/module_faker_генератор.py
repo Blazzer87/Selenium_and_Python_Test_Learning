@@ -1,8 +1,13 @@
-# import faker
-#
-# f = faker.Faker()
-#
-# print(f.email())
+from faker import *
+
+fake = Faker("ru_RU")
+print(fake.name())
+
+# или
+
+print(Faker("ru_RU").first_name_male())
+
+
 #
 # Адреса
 # Название	Метод	Пример

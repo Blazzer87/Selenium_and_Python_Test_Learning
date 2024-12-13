@@ -54,9 +54,9 @@ elements_locator_dict = {
 main_window = driver.current_window_handle          # определяем текущую страницу как главную
 
 for i in range(len(link_button_list)):         # запускаем цикл, равный количеству табов с внешней ссылкой
-    # link = driver.find_element(By.XPATH, f'{list(elements_locator_dict.values())[i]}')      # таб определяется по локатору из словаря, обращаемся к значению словаря переводя его в список, где индекс равен номеру цикла.
+    # link = driver.find_element(By.XPATH, f'{list(elements_locator_dict.values())[i]}')      # не актуально, переехало внутрь функции find_and_click
     # link.click()
-    find_and_click(f'{list(elements_locator_dict.values())[i]}')
+    find_and_click(f'{list(elements_locator_dict.values())[i]}')            # таб определяется по локатору из словаря, обращаемся к значению словаря переводя его в список, где индекс равен номеру цикла.
     wait = WebDriverWait(driver, 2)
     wait.until(expected_conditions.number_of_windows_to_be(2))           # ждём пока открытых страниц станет 2
     all_window_list = driver.window_handles                    # все открытые страницы определяем в список
