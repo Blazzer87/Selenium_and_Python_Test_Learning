@@ -1,0 +1,94 @@
+2024-12-16 14:31:19.606212, xpath, //*[@id="box-account-login"]//a[text()="New customers click here"]
+2024-12-16 14:31:19.637677, xpath, //*[@id="box-account-login"]//a[text()="New customers click here"], "locator found"
+2024-12-16 14:31:20.227492, xpath, //*[@id="create-account"]//input[@name="tax_id"]
+2024-12-16 14:31:20.263006, xpath, //*[@id="create-account"]//input[@name="tax_id"], "locator found"
+2024-12-16 14:31:20.438877, xpath, //*[@id="create-account"]//input[@name="company"]
+2024-12-16 14:31:20.464242, xpath, //*[@id="create-account"]//input[@name="company"], "locator found"
+2024-12-16 14:31:20.592602, xpath, //*[@id="create-account"]//input[@name="firstname"]
+2024-12-16 14:31:20.616628, xpath, //*[@id="create-account"]//input[@name="firstname"], "locator found"
+2024-12-16 14:31:20.736846, xpath, //*[@id="create-account"]//input[@name="lastname"]
+2024-12-16 14:31:20.762109, xpath, //*[@id="create-account"]//input[@name="lastname"], "locator found"
+2024-12-16 14:31:20.870636, xpath, //*[@id="create-account"]//input[@name="address1"]
+2024-12-16 14:31:20.901138, xpath, //*[@id="create-account"]//input[@name="address1"], "locator found"
+2024-12-16 14:31:21.034358, xpath, //*[@id="create-account"]//input[@name="address2"]
+2024-12-16 14:31:21.055858, xpath, //*[@id="create-account"]//input[@name="address2"], "locator found"
+2024-12-16 14:31:21.171868, xpath, //*[@id="create-account"]//input[@name="postcode"]
+2024-12-16 14:31:21.197530, xpath, //*[@id="create-account"]//input[@name="postcode"], "locator found"
+2024-12-16 14:31:21.311196, xpath, //*[@id="create-account"]//input[@name="city"]
+2024-12-16 14:31:21.335037, xpath, //*[@id="create-account"]//input[@name="city"], "locator found"
+2024-12-16 14:31:21.478209, css selector, [role=presentation]
+2024-12-16 14:31:21.498686, css selector, [role=presentation], "locator found"
+2024-12-16 14:31:21.667371, css selector, [type=search]
+2024-12-16 14:31:21.694711, css selector, [type=search], "locator found"
+2024-12-16 14:31:21.986518, xpath, //*[@id="create-account"]//select[@name="zone_code"]
+2024-12-16 14:31:22.060426, xpath, //*[@id="create-account"]//select[@name="zone_code"], "locator found"
+2024-12-16 14:31:22.213457, xpath, //*[@id="create-account"]//select/option[text()="Nevada"]
+2024-12-16 14:31:22.248804, xpath, //*[@id="create-account"]//select/option[text()="Nevada"], "locator found"
+2024-12-16 14:31:22.482714, xpath, //*[@id="create-account"]//input[@name="email"]
+2024-12-16 14:31:22.503857, xpath, //*[@id="create-account"]//input[@name="email"], "locator found"
+2024-12-16 14:31:22.656818, xpath, //*[@id="create-account"]//input[@name="phone"]
+2024-12-16 14:31:22.684291, xpath, //*[@id="create-account"]//input[@name="phone"], "locator found"
+2024-12-16 14:31:22.808852, xpath, //*[@id="create-account"]//input[@name="password"]
+2024-12-16 14:31:22.832221, xpath, //*[@id="create-account"]//input[@name="password"], "locator found"
+2024-12-16 14:31:22.966412, xpath, //*[@id="create-account"]//input[@name="confirmed_password"]
+2024-12-16 14:31:22.989829, xpath, //*[@id="create-account"]//input[@name="confirmed_password"], "locator found"
+2024-12-16 14:31:23.283587, xpath, //*[@id="create-account"]//button[@type="submit"]
+2024-12-16 14:31:23.307565, xpath, //*[@id="create-account"]//button[@type="submit"], "locator found"
+2024-12-16 14:31:23.710963, xpath, //*[@id="box-account"]//a[text()="Logout"]
+2024-12-16 14:31:23.838667, xpath, //*[@id="box-account"]//a[text()="Logout"], "locator found"
+2024-12-16 14:31:24.389862, xpath, //*[@id="box-account-login"]//input[@name="email"]
+2024-12-16 14:31:24.435469, xpath, //*[@id="box-account-login"]//input[@name="email"], "locator found"
+2024-12-16 14:31:24.609723, xpath, //*[@id="box-account-login"]//input[@name="password"]
+2024-12-16 14:31:24.638506, xpath, //*[@id="box-account-login"]//input[@name="password"], "locator found"
+2024-12-16 14:31:24.772167, xpath, //*[@id="box-account-login"]//button[text()="Login"]
+2024-12-16 14:31:24.795844, xpath, //*[@id="box-account-login"]//button[text()="Login"], "locator found"
+2024-12-16 14:31:25.144748, xpath, //*[@id="box-account"]//a[text()="Logout"]
+2024-12-16 14:31:25.268150, xpath, //*[@id="box-account"]//a[text()="Logout"], "locator found"
+Test completed, 2024-12-16 14:31:25.842330 
+2024-12-16 14:31:44.541583, xpath, //*[@id="box-account-login"]//a[text()="New customers click here"]
+2024-12-16 14:31:44.567391, xpath, //*[@id="box-account-login"]//a[text()="New customers click here"], "locator found"
+2024-12-16 14:31:45.129358, xpath, //*[@id="create-account"]//input[@name="tax_id"]
+2024-12-16 14:31:45.162154, xpath, //*[@id="create-account"]//input[@name="tax_id"], "locator found"
+2024-12-16 14:31:45.325522, xpath, //*[@id="create-account"]//input[@name="company"]
+2024-12-16 14:31:45.347433, xpath, //*[@id="create-account"]//input[@name="company"], "locator found"
+2024-12-16 14:31:45.471979, xpath, //*[@id="create-account"]//input[@name="firstname"]
+2024-12-16 14:31:45.495405, xpath, //*[@id="create-account"]//input[@name="firstname"], "locator found"
+2024-12-16 14:31:45.617153, xpath, //*[@id="create-account"]//input[@name="lastname"]
+2024-12-16 14:31:45.641830, xpath, //*[@id="create-account"]//input[@name="lastname"], "locator found"
+2024-12-16 14:31:45.750723, xpath, //*[@id="create-account"]//input[@name="address1"]
+2024-12-16 14:31:45.777275, xpath, //*[@id="create-account"]//input[@name="address1"], "locator found"
+2024-12-16 14:31:45.903050, xpath, //*[@id="create-account"]//input[@name="address2"]
+2024-12-16 14:31:45.926202, xpath, //*[@id="create-account"]//input[@name="address2"], "locator found"
+2024-12-16 14:31:46.050507, xpath, //*[@id="create-account"]//input[@name="postcode"]
+2024-12-16 14:31:46.073871, xpath, //*[@id="create-account"]//input[@name="postcode"], "locator found"
+2024-12-16 14:31:46.184177, xpath, //*[@id="create-account"]//input[@name="city"]
+2024-12-16 14:31:46.210707, xpath, //*[@id="create-account"]//input[@name="city"], "locator found"
+2024-12-16 14:31:46.344822, css selector, [role=presentation]
+2024-12-16 14:31:46.366679, css selector, [role=presentation], "locator found"
+2024-12-16 14:31:46.541480, css selector, [type=search]
+2024-12-16 14:31:46.569733, css selector, [type=search], "locator found"
+2024-12-16 14:31:46.846074, xpath, //*[@id="create-account"]//select[@name="zone_code"]
+2024-12-16 14:31:46.885258, xpath, //*[@id="create-account"]//select[@name="zone_code"], "locator found"
+2024-12-16 14:31:47.059992, xpath, //*[@id="create-account"]//select/option[text()="Nevada"]
+2024-12-16 14:31:47.102467, xpath, //*[@id="create-account"]//select/option[text()="Nevada"], "locator found"
+2024-12-16 14:31:47.332530, xpath, //*[@id="create-account"]//input[@name="email"]
+2024-12-16 14:31:47.354333, xpath, //*[@id="create-account"]//input[@name="email"], "locator found"
+2024-12-16 14:31:47.511832, xpath, //*[@id="create-account"]//input[@name="phone"]
+2024-12-16 14:31:47.532983, xpath, //*[@id="create-account"]//input[@name="phone"], "locator found"
+2024-12-16 14:31:47.666760, xpath, //*[@id="create-account"]//input[@name="password"]
+2024-12-16 14:31:47.688978, xpath, //*[@id="create-account"]//input[@name="password"], "locator found"
+2024-12-16 14:31:47.831645, xpath, //*[@id="create-account"]//input[@name="confirmed_password"]
+2024-12-16 14:31:47.855948, xpath, //*[@id="create-account"]//input[@name="confirmed_password"], "locator found"
+2024-12-16 14:31:48.152629, xpath, //*[@id="create-account"]//button[@type="submit"]
+2024-12-16 14:31:48.176541, xpath, //*[@id="create-account"]//button[@type="submit"], "locator found"
+2024-12-16 14:31:48.661945, xpath, //*[@id="box-account"]//a[text()="Logout"]
+2024-12-16 14:31:48.712493, xpath, //*[@id="box-account"]//a[text()="Logout"], "locator found"
+2024-12-16 14:31:49.234659, xpath, //*[@id="box-account-login"]//input[@name="email"]
+2024-12-16 14:31:49.269824, xpath, //*[@id="box-account-login"]//input[@name="email"], "locator found"
+2024-12-16 14:31:49.433042, xpath, //*[@id="box-account-login"]//input[@name="password"]
+2024-12-16 14:31:49.462676, xpath, //*[@id="box-account-login"]//input[@name="password"], "locator found"
+2024-12-16 14:31:49.582808, xpath, //*[@id="box-account-login"]//button[text()="Login"]
+2024-12-16 14:31:49.608975, xpath, //*[@id="box-account-login"]//button[text()="Login"], "locator found"
+2024-12-16 14:31:50.048086, xpath, //*[@id="box-account"]//a[text()="Logout"]
+2024-12-16 14:31:50.081927, xpath, //*[@id="box-account"]//a[text()="Logout"], "locator found"
+Test completed, 2024-12-16 14:31:50.540329 
