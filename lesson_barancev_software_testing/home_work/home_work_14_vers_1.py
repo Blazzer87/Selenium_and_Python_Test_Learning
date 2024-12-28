@@ -19,7 +19,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
-from lesson_software_testing.home_work.home_work_3_vers_2_with_def import *
+from lesson_barancev_software_testing.home_work.home_work_3_vers_2_with_def import *
 
 options = webdriver.ChromeOptions()                 # создаём опции хрома
 options.add_argument('start-maximized')             # передаём фулскрин в опции хрома
