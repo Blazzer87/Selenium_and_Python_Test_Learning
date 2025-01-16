@@ -17,6 +17,13 @@ pip freeze > requirements.txt
 Скачать все библиотеки из requirements
 pip install -r requirements.txt
 
+Инициация нового GIT репозитория через консоль
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin # здесь ссылка на репозиторий https://github.com/Blazzer87/AO_Reestr.git
+git push -u origin main
 
 
 
