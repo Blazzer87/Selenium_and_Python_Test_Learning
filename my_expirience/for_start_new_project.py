@@ -3,7 +3,7 @@
 python -m venv venv
 
 Активировать виртуальное окружение
-venv\Scripts\activate.ps1
+.venv\Scripts\activate.ps1
 
 После этого можно переключить интерпретатор на внутренний из виртуального окружения
 Existing -> VirtualEnv
