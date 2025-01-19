@@ -31,3 +31,12 @@ bmw = Car() # создали объект класса
 class Car:
     model = "BMW"
     engine = 1.6
+
+
+class Person:
+    # конструктор
+    def __init__(self):
+        print("Создание объекта Person")
+
+
+tom = Person()  # Создание объекта Person
