@@ -26,6 +26,11 @@ git remote add origin # здесь ссылка на репозиторий http
 git push -u origin main
 
 
+запуск пайтеста с аллюр отчётами
+pytest --alluredir=allure-results
+
+выгрузить отчёт на веб-морду
+allure serve allure-results
 
 
 
