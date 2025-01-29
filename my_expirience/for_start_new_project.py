@@ -1,6 +1,6 @@
 """
 Установить виртуальное окружение
-python -m venv venv
+python -m venv .venv
 
 Активировать виртуальное окружение
 .venv\Scripts\activate.ps1
