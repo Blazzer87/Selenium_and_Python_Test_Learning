@@ -25,14 +25,11 @@ git branch -M main
 git remote add origin # здесь ссылка на репозиторий https://github.com/Blazzer87/AO_Reestr.git
 git push -u origin main
 
-
 запуск пайтеста с аллюр отчётами
 pytest --alluredir=allure-results
 
 выгрузить отчёт на веб-морду
 allure serve allure-results
-
-
 
 
 
