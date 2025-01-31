@@ -23,7 +23,8 @@ js_code = "var ELEMENT = document.querySelector('.vue-portal-target'); if (ELEME
 driver.execute_script(js_code)
 time.sleep(3)
 
-js_code = "var ELEMENT = document.querySelector('.vue-portal-target'); if (ELEMENT) {ELEMENT.style.display = 'block';}"
+js_code = "var ELEMENT = document.querySelector('tm-entity-image__pic'); if (ELEMENT) {ELEMENT.style.display = 'block';}"
 
 driver.execute_script(js_code)
 time.sleep(3)
+
