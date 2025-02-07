@@ -9,7 +9,7 @@ port = "5432"
 db_connect = None                               # определяется переменная за пределами try/except чтобы не возникало ошибки
 
 try:
-    db_connect = psycopg2.connect(database=database, host=host, user=user, password=password, port=port)
+    db_connect = psycopg2.connect(database=database, host=host, user=user, password=password, port=port)      # создаётся объект класса psycopg2, к нему вызывается метод коннект, в параметры которого передаются параметры для подключения
 
     cursor = db_connect.cursor()                # создаём курсор
 
@@ -37,8 +37,8 @@ try:
 
     print('\n')
 
-    print('Полученный набор данных вовзращается в виде списка, внутрь которого помещён кортеж.''\n'
-          'Обращение происходит по индекс к обоим из них''\n'
+    print('Полученный набор данных возвращается в виде списка, внутрь которого помещён кортеж.''\n'
+          'Обращение происходит по индексу к обоим из них''\n'
           'Например получим "Administrator" - 2-ой элемент из 2-ого кортежа в наборе данных возвращаемом из role''\n')
 
     cursor.execute("SELECT * FROM roles")
