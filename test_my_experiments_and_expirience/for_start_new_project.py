@@ -33,4 +33,11 @@ allure serve allure-results
 
 
 
+pytest
+
+pytest -v
+
+pytest -sv
+
+
 """
