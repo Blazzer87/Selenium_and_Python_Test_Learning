@@ -16,6 +16,9 @@ try:
         row = cursor.fetchall()                         # fetchall выводит все найденные записи
         print(row)
 
+except Exception as error:
+    print("Ошибка", error)
+
 finally:
     if db_connect is not None:
         db_connect.close()                              # Закрываем соединение
