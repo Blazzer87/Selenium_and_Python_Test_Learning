@@ -22,7 +22,7 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin # здесь ссылка на репозиторий https://github.com/Blazzer87/AO_Reestr.git
+git remote add origin https://github.com/Blazzer87/AO_Reestr.git
 git push -u origin main
 
 запуск пайтеста с аллюр отчётами
