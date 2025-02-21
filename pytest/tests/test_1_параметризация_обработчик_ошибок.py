@@ -16,6 +16,7 @@ class Calculator:
         #    raise ValueError("Делить на ноль нельзя")      закомментил чтобы работал обработчик ошибок
         return x / y
 
+        # 1 ВАРИАНТ ОБРАБОТЧИК ОШИБОК
 
 class TestCalculator:
 
@@ -29,8 +30,6 @@ class TestCalculator:
         with expectation:
             assert Calculator().add(x, y) == result
 
-
-
     @pytest.mark.parametrize('x, y, result, expected',
                              [(1, 1, 1, does_not_raises()),
                               (2, 2, 1, does_not_raises()),
@@ -42,7 +41,17 @@ class TestCalculator:
         with expected:
             assert Calculator().divide(x, y) == result
 
+        # 2 ВАРИАНТ УПРОЩЁННЫЙ ОБРАБОТЧИК ОШИБОК
 
+class Calculator2:
+
+    def divide(self, x, y):
+        return x / y
+
+@pytest.mark.parametrize('x, y, expected_exception', [(1, 0, ZeroDivisionError),(10, "privet", TypeError)])
+def test_divide_exceptions(x, y, expected_exception):
+    with pytest.raises(expected_exception):
+        Calculator2().divide(x, y)
 
 
 
