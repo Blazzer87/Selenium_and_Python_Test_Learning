@@ -36,5 +36,5 @@ all_header2 = dict(ChainMap(header2, header1))
 
 
 """Обращение к хедерам через респонс"""
-print(response.headers['Content-Type'])              # 'application/json'
-print(response.headers.get('content-type'))        # 'application/json'
+#print(response.headers['Content-Type'])              # 'application/json'
+#print(response.headers.get('content-type'))        # 'application/json'
