@@ -1,7 +1,5 @@
 import requests
 
-from Module_Python.requests.headers_union_and_use import header1,header2
-
 base_url= "https://rahulshettyacademy.com"
 key = "qaclick123"
 endpoint = "/maps/api/place/add/json"+"?key="+f"{key}"
@@ -14,10 +12,10 @@ response_hook = {}
 response = requests.post(
     url="https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123",
     params= {'key1': 'value1', 'key2': 'value2'},
-    files={'file': ('filename.txt', open('filename.txt', 'rb'))},
+    #files={'file': ('filename.txt', open('filename.txt', 'rb'))},
     hooks={'response': response_hook},
     json={"location": {"lat": -38.383494,"lng": 33.427362},"accuracy": 50,"name": "Frontline house","phone_number": "(+91) 983 893 3937","address": "29, side layout, cohen 09","types": ["shoe park","shop"],"website": "http://google.com","language": "French-IN"},
-    headers={'Accept': 'application/json', 'Content-Type': 'application/json'},
+    headers={'test1': 'Test2/json', 'test3-Type': 'test4/json'},
     data={"location": {"lat": -38.383494,"lng": 33.427362},"accuracy": 50,"name": "Frontline house","phone_number": "(+91) 983 893 3937","address": "29, side layout, cohen 09","types": ["shoe park","shop"],"website": "http://google.com","language": "French-IN"},
     cookies={'session_id': '123456789'},
     auth=('user', 'pass'),
@@ -25,8 +23,8 @@ response = requests.post(
     allow_redirects=True,
     stream=False,
     verify=True,
-    cert=('/path/to/cert.pem', '/path/to/key.pem'),
-    proxies={'http': 'http://10.10.1.10:3128', 'https': 'http://10.10.1.10:1080'}
+    #cert=('/path/to/cert.pem', '/path/to/key.pem'),
+    #proxies={'http': 'http://10.10.1.10:3128', 'https': 'http://10.10.1.10:1080'}
     )
 
 """**url** (строка): URL-адрес, на который будет отправлен запрос. В вашем примере это `url`
@@ -47,6 +45,10 @@ cert (str или tuple):    • Используется для указания
 """
 
 
-
-
+print(response.request.url)
+print(response.request.headers)
+print(response.request.method)
+print(response.request.body)
+print(response.request.hooks)
+print(response.request.path_url)
 

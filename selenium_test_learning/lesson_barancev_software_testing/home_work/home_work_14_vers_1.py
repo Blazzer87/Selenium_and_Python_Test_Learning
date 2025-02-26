@@ -16,7 +16,7 @@ from selenium.common import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
-from Selenium_test_learning.lesson_barancev_software_testing.home_work.home_work_3_vers_2_with_def import *
+from selenium_test_learning.lesson_barancev_software_testing.home_work.home_work_3_vers_2_with_def import *
 
 options = webdriver.ChromeOptions()                 # создаём опции хрома
 options.add_argument('start-maximized')             # передаём фулскрин в опции хрома

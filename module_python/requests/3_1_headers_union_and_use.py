@@ -15,7 +15,7 @@ response = requests.post(url=url, json=json, headers=header1|header2)
 
 
 # объединение хедеров МЕТОД 1 - лучший метод через оператор |
-# print("metod 1", header1 | header2)
+print("metod 1", header1 | header2)
 
 
 # объединение хедеров МЕТОД 2 - чистое объединение через распаковку внутрь нового словаря
@@ -38,3 +38,5 @@ all_header2 = dict(ChainMap(header2, header1))
 """Обращение к хедерам через респонс"""
 #print(response.headers['Content-Type'])              # 'application/json'
 #print(response.headers.get('content-type'))        # 'application/json'
+
+

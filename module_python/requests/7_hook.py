@@ -1,6 +1,6 @@
 import requests
 
-from Module_Python.requests.headers_union_and_use import header1,header2
+
 
 base_url= "https://rahulshettyacademy.com"
 key = "qaclick123"
@@ -20,4 +20,7 @@ def hook_print_response(response, *args, **kwargs):
 hooks = {'response': [hook_print_text, hook_print_response]}            # названия хука предустановлено в библиотеке и их нельзя называть произвольно, только response - Ответ, сформированный на основе запроса.
 
 response = requests.post(url=url, json=json, headers=header1|header2, hooks=hooks)
+
+
+
 
