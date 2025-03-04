@@ -10,17 +10,7 @@ class City(BaseModel):
     tags: list[Tag]
 
 
-input_json = """{
-    "city_id": 123,
-    "name": "Moscow",
-    "tags": [{
-        "id": 1,
-        "tag": "capital"
-    },{
-        "id": 2,
-        "tag": "big_city"
-    }]
-}"""
+input_json = """{"city_id": 123,"name": "Moscow","tags": [{"id": 1,"tag": "capital"},{"id": 2,"tag": "big_city"}]}"""
 
 
 try:
