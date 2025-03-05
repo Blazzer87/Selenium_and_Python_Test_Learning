@@ -1,7 +1,7 @@
 import json
 
 from pydantic.v1 import BaseModel
-from typing import Any
+from validation_with_typing import Any
 from pydantic.v1.utils import GetterDict
 from xml.etree.ElementTree import fromstring
 

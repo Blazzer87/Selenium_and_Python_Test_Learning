@@ -1,46 +1,46 @@
-from typing import Optional
+from validation_with_typing import Optional
 
 from pydantic import BaseModel
 from pydantic.dataclasses import dataclass
 
 """ПРИМЕР СТАНДАРТНЫЙ"""
-# class User(BaseModel):
-#     uuid: str
-#     name: str
-# data = """{"uuid": "dickbutt",
-#         "name": "Gill Bates"}"""
-# print(User.model_validate_json(data))
+class User(BaseModel):
+    uuid: str
+    name: str
+data = """{"uuid": "dickbutt",
+        "name": "Gill Bates"}"""
+print(User.model_validate_json(data))
 
 
 """ПРИМЕР КОГДА ВАЛИДИРУЕТСЯ НЕСТАДАРТНЫЙ ТИП ДАННЫХ, В ДАННОМ СЛУЧАЕ ОБЪЕКТ КЛАССА UUID"""
-# from uuid import UUID
-#
-# class User2(BaseModel):
-#     uuid: UUID
-#     name: str
-# data = """{"uuid": "dickbutt",
-#         "name": "Gill Bates"}"""
-# User2.model_validate_json(data)       # ВЫДАСТ ООШИБКУ
+from uuid import UUID
+
+class User2(BaseModel):
+    uuid: UUID
+    name: str
+data = """{"uuid": "dickbutt",
+        "name": "Gill Bates"}"""
+User2.model_validate_json(data)       # ВЫДАСТ ООШИБКУ
 
 
 
 """ПРИМЕР КОГДА НЕИЗВЕСТНО ПРИДЁТ ЛИ СПИСОК ИЛИ КОРТЕЖ НО НУЖНО ПРОВАЛИДИРОВАТЬ ИНТ ВНУТРИ НЕГО"""
-# from typing import Sequence
-#
-# @dataclass
-# class Bingo:
-#     numbers: Sequence[int]
-#
-# seq_list = [1,2,3]
-# seq_tuple = (1,2,3)
-# dictionary = {"id":1, "name":"tom"}
-#
-# for x in seq_list, seq_tuple:
-#     Bingo(**{'numbers': x})
-#
-# Bingo(seq_list)         # OK
-# Bingo(seq_tuple)        # OK
-# Bingo(dictionary)       # выдаст ошибку
+from validation_with_typing import Sequence
+
+@dataclass
+class Bingo:
+    numbers: Sequence[int]
+
+seq_list = [1,2,3]
+seq_tuple = (1,2,3)
+dictionary = {"id":1, "name":"tom"}
+
+for x in seq_list, seq_tuple:
+    Bingo(**{'numbers': x})
+
+Bingo(seq_list)         # OK
+Bingo(seq_tuple)        # OK
+Bingo(dictionary)       # выдаст ошибку
 
 
 """ПРИМЕР с UNION когда не знаешь что придёт в данных инт или стринга"""
