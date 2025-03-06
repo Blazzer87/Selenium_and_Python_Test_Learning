@@ -12,7 +12,7 @@ class User(BaseModel):
             raise ValueError('Invalid email address')
         return value
 
-    @model_validator('password')
+    @model_validator(mode='before')
     def check_passwords_match(cls, values):
         if values['password'] != values['confirm_password']:
             raise ValueError('Passwords do not match')
