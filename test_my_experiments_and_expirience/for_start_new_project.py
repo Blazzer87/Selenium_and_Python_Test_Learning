@@ -31,13 +31,9 @@ pytest --alluredir=allure-results
 выгрузить отчёт на веб-морду
 allure serve allure-results
 
+проверить все скачанные модели
+pip list
 
-
-pytest
-
-pytest -v
-
-pytest -sv
 
 
 """
