@@ -1,4 +1,3 @@
-import requests
 from locust import HttpUser, task, constant
 
 
@@ -11,7 +10,6 @@ class ReestrTestUser(HttpUser):
     @task
     def get_authorize_methods(self):
         response = self.client.get(url='/api/v1/internal/authorization/user/get_authorize_methods')
-        print(response.json())
 
 
     @task
