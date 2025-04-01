@@ -3,12 +3,12 @@ import pytest
 
 @pytest.fixture
 def create_user():
-    pass
+    assert True
 
 # ЗАПУСК ФИКСТУРНОЙ ФУНКЦИИ С УКАЗАНИЕМ ЭТО САМОЙ ФУНКЦИИ
 @pytest.mark.usefixtures("create_user")
 def update_user():
-    pass
+    assert True
 
 
 

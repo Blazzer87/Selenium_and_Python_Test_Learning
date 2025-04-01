@@ -33,3 +33,25 @@ class TestNum:
     def test_3(self, username, password):
         # Тест логина с заданными учетными данными
         pass
+
+
+
+    @pytest.mark.parametrize("test_input, expected", [
+        ("3+5", 8),
+        ("2+4", 6),
+        pytest.param("6*9", 42, marks=pytest.mark.xfail)])      # заведомо битый тест помечается как xfail
+    def test_eval(self, test_input, expected):
+        assert eval(test_input) == expected
+
+
+
+
+    @pytest.mark.parametrize("test_input,expected",[
+        ("3+5", 8),
+        pytest.param("1+7", 8, marks=pytest.mark.basic),
+        pytest.param("2+4", 6, marks=pytest.mark.basic, id="basic_2+4"),
+        pytest.param("6*9", 42, marks=[pytest.mark.basic, pytest.mark.xfail], id="basic_6*9"),
+        ],
+    )
+    def test_eval_2(self, test_input, expected):
+        assert eval(test_input) == expected
