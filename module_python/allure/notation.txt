@@ -1,0 +1,28 @@
+
+
+
+
+
+allure generate - генерирует отчёт в папку allure-report
+                -c - удалить пердыдущий отчёт перед генерацией нового отчёта
+                --single-file - сгенерировать одним файлом
+
+
+allure open - открывает веб-сервер, берет данные из allure-report (можно указать путь к директории с отчётом)
+allure serve - открывает веб-сервер, берет данные из allure-results
+т.к. allure-results генерируется автоматически после каждого прогона, а allure-report только после команды generate - allure open может сгенерировать отчёт из устревших данных
+
+pytest test.py --alluredir=allure-results - запускает тесты с генерацией отчётов аллюра в папку allure-results
+
+
+“trivial”, “minor”, “normal”, “critical”, and “blocker” - виды severity в аллюре
+
+пирамида декораторов от верхнего уровня к нижнему:
+@allure.epic  - объединяет feature
+@allure.feature - объединяет story
+@allure.story - объединяет title
+@allure.title (уже на конкретный тест) - работает на том же уровне что и ids параметризации. Если есть title то ids не показывается
+@allure.step (детализация до шага внутри каждого теста)
+
+@allure.link('https://google.com') - добавить ссылку в тело теста
+@allure.description - добавить описание в тело теста
