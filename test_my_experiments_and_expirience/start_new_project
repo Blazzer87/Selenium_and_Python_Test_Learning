@@ -1,4 +1,3 @@
-"""
 Установить виртуальное окружение
 python -m venv .venv
 
@@ -33,7 +32,3 @@ allure serve allure-results
 
 проверить все скачанные модели
 pip list
-
-
-
-"""
