@@ -11,15 +11,14 @@ import pytest
 @allure.epic("SUM - это allure.epic")
 @allure.feature("Складываем - это allure.feature")
 @allure.story("Правильно - allure.story")
-@allure.title("test_1 - это тайтл и здесь ещё есть ids")
 @pytest.mark.parametrize('x, y, expect', [
     (2,2,4),
     (3,3,6),
     (4,4,9),
 ],
-                         ids=["this is ids= in pytest 2,2,4",
-                              "this is ids= in pytest 3,3,6",
-                              "this is ids= in pytest 4,4,9"]
+                         ids=["this is ids= in pytest 2,2,4 - There is no title here",
+                              "this is ids= in pytest 3,3,6 - There is no title here",
+                              "this is ids= in pytest 4,4,9 - There is no title here"]
                          )
 def test_1(x, y, expect):
     assert expect == x + y
@@ -32,7 +31,7 @@ def test_1(x, y, expect):
 @pytest.mark.parametrize('x, y, expect', [
     (1,2,5)
 ],
-                         ids=["this is ids= in pytest"]
+                         ids=["this is ids= in pytest, "]
                          )
 def test_2(x, y, expect):
     assert expect == x + y
@@ -64,12 +63,13 @@ def test_3(x, y, expect):
 def test_4():
     assert False
 
+
 @allure.epic("SUM - это allure.epic")
 @allure.feature("Просто сравниваем, это другая фича - это allure.feature")
 @allure.story("Должна быть ошибка - allure.story")
 @allure.title("test_5 - это тайтл ")
 @allure.description("длинный много шаговый тест - это дискрипшн")
-@allure.tag("tag1","tag2", "tag3")
+@allure.tag("tagПРОВЕРКА","tag ВОТ ЭТО", "tagТЕГИ!!!")
 @allure.id("это декоратор - allure.id")
 @allure.label("это декоратор - allure.label")
 @allure.manual("это декоратор - allure.manual")
@@ -96,7 +96,7 @@ def test_5(screenshot_name=None):
         allure.attach(
             body=driver.get_screenshot_as_png(),
             name=screenshot_name,
-            attachment_type=AttachmentType.JPG)
+            attachment_type=AttachmentType.PNG)
         driver.quit()
         assert False
 
