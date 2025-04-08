@@ -1,4 +1,3 @@
-"""
 Usage: allure [options] [command] [command options]
   Options:
     --help
