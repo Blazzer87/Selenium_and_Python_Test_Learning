@@ -24,7 +24,7 @@ git checkout test-branch1
 git checkout -b test-branch1 - создать ветку и сразу переключиться
 
 git push origin test-branch1
-слить в удалённый репозиторий НО В ВЕТКУ test-branch1, а не main. На Гитхабе уже должна быть создана ветка с таким названием.
+слить в удалённый репозиторий НО В ВЕТКУ test-branch1, а не main.
 origin - это короткое название нашего удалённого репозитория чтобы не писать длинный урл
 
 git pull origin {ветка репозитория}
@@ -58,6 +58,13 @@ git checkout HEAD^
 git checkout HEAD~3
 Перемещение на несколько коммитов назад ~<num>
 
+git checkout {хеш коммита}
+Перемещение на определёный локальный коммит в прошлом
+
+git checkout {ветка репозитория}
+вернуться назад к последнему сосотоянию ветки мейн
+
+
 git branch -f main HEAD~3
 Переместит (принудительно) ветку main на 3 родителя назад от HEAD. -f это branch forcing
 
@@ -78,8 +85,6 @@ git cherry-pick <commit-hash>
 git cherry-pick --continue
 отменить cherry-pick с помощью:
 git cherry-pick --abort
-
-
 
 git init
 сообщает гиту о том что данную папку нужно превратить в репозиторий.Предварительно нужно через cd перейти в эту папку
