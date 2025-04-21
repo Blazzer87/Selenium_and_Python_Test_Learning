@@ -86,17 +86,17 @@ def test_5(screenshot_name=None):
             attachment_type=AttachmentType.JPG)
     with allure.step('проверим 2+2 - это allure.step внутри теста'):
         driver.get("https://example.com/")
-        allure.attach(
-            body=driver.get_screenshot_as_png(),
-            name=screenshot_name,
-            attachment_type=AttachmentType.JPG)
+        # allure.attach(
+        #     body=driver.get_screenshot_as_png(),
+        #     name=screenshot_name,
+        #     attachment_type=AttachmentType.JPG)
         assert 2 + 2 == 4
     with allure.step('проверим щаг с заведомой ошибкой - это allure.step внутри теста'):
         driver.get("https://example.com/")
-        allure.attach(
-            body=driver.get_screenshot_as_png(),
-            name=screenshot_name,
-            attachment_type=AttachmentType.PNG)
+        # allure.attach(
+        #     body=driver.get_screenshot_as_png(),
+        #     name=screenshot_name,
+        #     attachment_type=AttachmentType.PNG)
         driver.quit()
         assert False
 
@@ -119,3 +119,4 @@ def fixtura_1():
 @pytest.mark.flaky(reruns=7)
 def test_6(fixtura_1):
     assert fixtura_1 == 5
+    pytest.main(["-x", "mytestdir"])

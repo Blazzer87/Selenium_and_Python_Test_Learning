@@ -24,3 +24,4 @@ def check_duration(request, cache):
 @pytest.mark.parametrize('i', range(10))
 def test_slow_stuff(i):
     time.sleep(random.random())
+

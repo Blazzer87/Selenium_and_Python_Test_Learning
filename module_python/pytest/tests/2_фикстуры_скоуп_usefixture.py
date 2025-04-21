@@ -50,3 +50,4 @@ def function_4():
 @pytest.fixture(scope="class")
 def function_5():
     pass
+
