@@ -3,15 +3,14 @@ import shutil
 import requests
 
 
-def pytest_sessionfinish():
+def pytest_sessionfinish(session, exitstatus):
     path = os.getcwd()
     if os.path.isdir(os.path.join(path, 'allure-results')):
-        print("\n"
-              "Папка 'allure-results' существует. Приступаю к генерации отчёта.")
+        print("Папка 'allure-results' существует. Приступаю к генерации отчёта.")
 
         # отправляем команду на генерацию нового allure-report
-        # удалять его предварительно не нужно, он очищается через clean
-        os.system("allure generate allure-results -c -o allure-report")
+        # удалять его предварительно не нужно, он очищается командой
+        os.system("allure generate allure-results --clean -o allure-report")
 
         # проверяем успешность создания allure-report
         if os.path.isdir(os.path.join(path, 'allure-report')):
@@ -42,7 +41,7 @@ def pytest_sessionfinish():
                     files={
                         "file": ("allure-report.zip", zip_report, "application/zip")
                         })
-            if response.status_code == 200 and response.text == '"ok"' :
+            if response.status_code == 200 and response.text == "ok":
                 print("Отчёт allure-report.zip успешно загружен в DoQA.")
             else:
                 print("Отчёт не был загружен в DoQA.")
@@ -50,3 +49,6 @@ def pytest_sessionfinish():
             print("Папка 'allure-report' не найдена.")
     else:
         print("Папка 'allure-results' не найдена.")
+
+
+

@@ -119,4 +119,3 @@ def fixtura_1():
 @pytest.mark.flaky(reruns=7)
 def test_6(fixtura_1):
     assert fixtura_1 == 5
-    pytest.main(["-x", "mytestdir"])
