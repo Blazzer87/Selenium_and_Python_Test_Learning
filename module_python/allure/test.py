@@ -15,10 +15,12 @@ import pytest
     (2,2,4),
     (3,3,6),
     (4,4,9),
+    (4,4,8),
 ],
                          ids=["this is ids= in pytest 2,2,4 - There is no title here",
                               "this is ids= in pytest 3,3,6 - There is no title here",
-                              "this is ids= in pytest 4,4,9 - There is no title here"]
+                              "this is ids= in pytest 4,4,9 - There is no title here",
+                              "this is ids= in pytest 4,4,8 - There is no title here"]
                          )
 def test_1(x, y, expect):
     assert expect == x + y
@@ -29,9 +31,11 @@ def test_1(x, y, expect):
 @allure.story("Не правильно - allure.story")
 @allure.title("test_2 - это тайтл и здесь ещё есть ids")
 @pytest.mark.parametrize('x, y, expect', [
-    (1,2,5)
+    (1,2,5),
+    (10,10,20)
 ],
-                         ids=["this is ids= in pytest, "]
+                         ids=["this is ids= in pytest 1 + 2 = 5",
+                              "this is ids= in pytest 10 + 10 = 20"]
                          )
 def test_2(x, y, expect):
     assert expect == x + y
@@ -77,26 +81,26 @@ def test_4():
 @allure.link('https://google.com')
 def test_5(screenshot_name=None):
     driver = webdriver.Chrome()
-    with allure.step('проверим 1+1 - это allure.step внутри теста'):
-        assert 1 + 1 == 2
+    with allure.step('сделаем скрин example.com - это allure.step внутри теста'):
         driver.get("https://example.com/")
         allure.attach(
             body=driver.get_screenshot_as_png(),
             name=screenshot_name,
             attachment_type=AttachmentType.JPG)
-    with allure.step('проверим 2+2 - это allure.step внутри теста'):
-        driver.get("https://example.com/")
-        # allure.attach(
-        #     body=driver.get_screenshot_as_png(),
-        #     name=screenshot_name,
-        #     attachment_type=AttachmentType.JPG)
+        assert 1 + 1 == 2
+    with allure.step('сделаем скрин google.com - это allure.step внутри теста'):
+        driver.get("https://google.com/")
+        allure.attach(
+            body=driver.get_screenshot_as_png(),
+            name=screenshot_name,
+            attachment_type=AttachmentType.JPG)
         assert 2 + 2 == 4
     with allure.step('проверим щаг с заведомой ошибкой - это allure.step внутри теста'):
-        driver.get("https://example.com/")
-        # allure.attach(
-        #     body=driver.get_screenshot_as_png(),
-        #     name=screenshot_name,
-        #     attachment_type=AttachmentType.PNG)
+        driver.get("https://ya.ru/")
+        allure.attach(
+            body=driver.get_screenshot_as_png(),
+            name=screenshot_name,
+            attachment_type=AttachmentType.PNG)
         driver.quit()
         assert False
 

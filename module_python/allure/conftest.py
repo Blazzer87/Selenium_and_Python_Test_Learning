@@ -7,7 +7,7 @@ def pytest_sessionfinish():
     path = os.getcwd()
     if os.path.isdir(os.path.join(path, 'allure-results')):
         print("\n"
-              "Папка 'allure-results' существует. Приступаю к генерации отчёта.")
+              "Папка 'allure-results' найдена. Приступаю к генерации отчёта.")
 
         # отправляем команду на генерацию нового allure-report
         # удалять его предварительно не нужно, он очищается через clean

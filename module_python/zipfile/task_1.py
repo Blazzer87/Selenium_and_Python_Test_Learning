@@ -23,8 +23,3 @@ def find_all_files():
 
 
 find_all_files()
-
-def get_path():
-    print(os.getcwd())
-
-get_path()
