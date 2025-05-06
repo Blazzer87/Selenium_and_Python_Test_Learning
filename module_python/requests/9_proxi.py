@@ -9,8 +9,8 @@ proxies = {
   'https': 'http://10.10.1.10:1080',
 }
 
-requests.get('http://example.org', proxies=proxies)
-
+r = requests.get('http://example.org', proxies=proxies)
+print(r.history)
 
 
 
