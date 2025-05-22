@@ -21,7 +21,7 @@ def get_mail():
         status, messages = mail.search(None, 'UNSEEN')
         mail_ids = messages[0].split()
 
-        # Получаем последние 5 писем
+        # Получаем последнее письмо
         if mail_ids:
             last_email_id = mail_ids[-1]
             status, msg_data = mail.fetch(last_email_id, '(RFC822)')

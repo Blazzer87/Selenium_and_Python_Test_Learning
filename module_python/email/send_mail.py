@@ -12,19 +12,8 @@ input_yandex_email = 'laba87-test1@yandex.ru'
 password_IDE_yandex = 'dsnkgiqxrulmohyq'
 
 
-@pytest.mark.parametrize("recipient, subject, message_body", (
-    ["s.laba@qpdev.ru", "информация по вашему заказу", "Ваш заказ успешно принят."],
-    ["s.laba@qpdev.ru", "информация по вашему заказу", "Мы обрабатываем ваш заказ."],
-    ["s.laba@qpdev.ru", "информация по вашему заказу", "Ваши товары собираются на складе."],
-    ["s.laba@qpdev.ru", "информация по вашему заказу", "Ваш заказ упакован и готов к отправке."],
-    ["s.laba@qpdev.ru", "информация по вашему заказу", "Ваш заказ передан в службу доставки."],
-    ["s.laba@qpdev.ru", "информация по вашему заказу", "Доставка вашего заказа в пути."],
-    ["s.laba@qpdev.ru", "информация по вашему заказу", "Ваш заказ находится на сортировочном центре."],
-    ["s.laba@qpdev.ru", "информация по вашему заказу", "Ваш заказ будет доставлен завтра."],
-    ["s.laba@qpdev.ru", "информация по вашему заказу", "Ваш заказ успешно доставлен!"],
-    ["s.laba@qpdev.ru", "информация по вашему заказу", "Спасибо за покупку! Оставьте отзыв о вашем заказе."]
-))
-def test_send_mail(recipient, subject, message_body):
+
+def send_mail(recipient, subject, message_body):
 
     message = MIMEMultipart()           # создали объект сообщения
     message['From'] = input_yandex_email       # добавили в объект сообщения отправителя
