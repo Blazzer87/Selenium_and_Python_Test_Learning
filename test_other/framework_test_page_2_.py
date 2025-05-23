@@ -50,8 +50,11 @@ class PageTextBox(BasePage):
 
 class BaseTest:
 
-    page = PageTextBox()
+    page : PageTextBox()
 
+    def setup(self):
+
+        self.page = PageTextBox()
 
 class TestTextBox (BaseTest):
 

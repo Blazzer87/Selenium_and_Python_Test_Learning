@@ -11,6 +11,7 @@ class Tag(BaseModel):
 class City(BaseModel):
     city_id: int
     name: str
+
     tags: list[Tag]
 
 input_json = """{"city_id": 123,"name": "Moscow","tags": [{"id": 1,"tag": "capital"},{"id": 2,"tag": "big_city"}]}"""

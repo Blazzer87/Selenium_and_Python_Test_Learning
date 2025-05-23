@@ -19,6 +19,7 @@ auto = ("BMW", "E39", 2.0), ("AUDI", "A6", 2.4), ("FORD", "MONDEO", 2.0), ("MAZD
 # Параметризуем фикстуру car
 @pytest.fixture(params=auto, ids=["t1", "t2","t3","t4"])
 def car(request):
+    print(request.param)
     return request.param
 
 def test_driver_choice(car):
