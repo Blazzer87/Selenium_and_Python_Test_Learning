@@ -67,5 +67,6 @@ import requests
 #         print("Отчёт allure-report.zip успешно загружен в DoQA.")
 #     else:
 #         print("Отчёт не был загружен в DoQA.")
+#
 
-
+# попробуем разрешение конфликтов
